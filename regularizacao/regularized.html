@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -13092,6 +13092,7 @@ div#notebook {
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span><span class="p">,</span> <span class="n">RidgeCV</span><span class="p">,</span> <span class="n">ElasticNet</span><span class="p">,</span> <span class="n">LassoCV</span><span class="p">,</span> <span class="n">LassoLarsCV</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
 
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -13108,7 +13109,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
@@ -13131,7 +13132,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Drive already mounted at /content/drive; to attempt to forcibly remount, call drive.mount(&#34;/content/drive&#34;, force_remount=True).
+<pre>Mounted at /content/drive
 </pre>
 </div>
 </div>
@@ -13143,14 +13144,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="2.1---Analisar-as-distribui&#231;&#245;es-das-vari&#225;veis-para-ver-se-est&#227;o-enviesadas-e-precisam-de-corre&#231;&#227;o;-tratamento-de-valores-ausentes,-vari&#225;veis-categ&#243;ricas-e-normaliza&#231;&#227;o,-quando-for-o-caso.">2.1 - Analisar as distribui&#231;&#245;es das vari&#225;veis para ver se est&#227;o enviesadas e precisam de corre&#231;&#227;o; tratamento de valores ausentes, vari&#225;veis categ&#243;ricas e normaliza&#231;&#227;o, quando for o caso.<a class="anchor-link" href="#2.1---Analisar-as-distribui&#231;&#245;es-das-vari&#225;veis-para-ver-se-est&#227;o-enviesadas-e-precisam-de-corre&#231;&#227;o;-tratamento-de-valores-ausentes,-vari&#225;veis-categ&#243;ricas-e-normaliza&#231;&#227;o,-quando-for-o-caso.">&#182;</a></h1><p><strong>Abaixo temos a retiradas dos NaN encontrados no meio dos dados, também há a separação dos dados de treino para os dados do ano de 2006 e os dados de teste para os dados do ano de 2010</strong></p>
+<h1 id="2.1---Analisar-as-distribui&#231;&#245;es-das-vari&#225;veis-para-ver-se-est&#227;o-enviesadas-e-precisam-de-corre&#231;&#227;o;-tratamento-de-valores-ausentes,-vari&#225;veis-categ&#243;ricas-e-normaliza&#231;&#227;o,-quando-for-o-caso.">2.1 - Analisar as distribui&#231;&#245;es das vari&#225;veis para ver se est&#227;o enviesadas e precisam de corre&#231;&#227;o; tratamento de valores ausentes, vari&#225;veis categ&#243;ricas e normaliza&#231;&#227;o, quando for o caso.<a class="anchor-link" href="#2.1---Analisar-as-distribui&#231;&#245;es-das-vari&#225;veis-para-ver-se-est&#227;o-enviesadas-e-precisam-de-corre&#231;&#227;o;-tratamento-de-valores-ausentes,-vari&#225;veis-categ&#243;ricas-e-normaliza&#231;&#227;o,-quando-for-o-caso.">&#182;</a></h1><p><strong>Abaixo temos a retiradas dos NaN encontrados no meio dos dados, também há a separação dos dados de treino para os dados do ano de 2006 e 2010 e os dados de teste para os dados do ano de 2014</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1"># Concatena os dados entre dos anos de 2006+2010 e 2014</span>
@@ -13220,7 +13221,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="c1">#Modelos abaixo:</span>
@@ -13266,7 +13267,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Score de treino em Lasso&#39;</span><span class="p">,</span> <span class="n">model_lasso</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
@@ -13312,7 +13313,7 @@ Score de Validação em Ridge -0.2788891372527771
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">model_knn</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -13360,7 +13361,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">lasso_results</span> <span class="o">=</span> <span class="n">model_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
@@ -13384,13 +13385,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f45171fa210&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fc518d8ce50&gt;]</pre>
 </div>
 
 </div>
@@ -13416,7 +13417,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">coef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model_lasso</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -13449,7 +13450,7 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13481,7 +13482,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
@@ -13500,13 +13501,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f451535f650&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc516f01810&gt;</pre>
 </div>
 
 </div>
@@ -13539,7 +13540,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">ridge_results</span> <span class="o">=</span> <span class="n">model_ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
@@ -13563,13 +13564,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f451520d910&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fc516dbeb10&gt;]</pre>
 </div>
 
 </div>
@@ -13595,7 +13596,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">coef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">model_ridge</span><span class="o">.</span><span class="n">coef_</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -13628,7 +13629,7 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13660,7 +13661,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
@@ -13679,13 +13680,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[13]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f4515115710&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc516cbac90&gt;</pre>
 </div>
 
 </div>
@@ -13718,7 +13719,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">knn_results</span> <span class="o">=</span> <span class="n">model_knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
@@ -13742,13 +13743,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f4515108bd0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fc516beec50&gt;]</pre>
 </div>
 
 </div>
@@ -13774,7 +13775,7 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
@@ -13793,13 +13794,13 @@ Score de Validação em KNN 0.08756686867662067
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f4514ffa290&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc516e85050&gt;</pre>
 </div>
 
 </div>
@@ -13839,15 +13840,16 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">rmse_cv</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">rmse_cv</span><span class="p">(</span><span class="n">pred</span><span class="p">):</span>
   <span class="n">rmse</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s2">&quot;neg_mean_squared_error&quot;</span><span class="p">))</span>
   <span class="k">return</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
-<span class="c1">#print(&quot;Lasso RMSE&quot; + rmse_cv(model_lasso))</span>
-<span class="c1">#print(&quot;Ridge RMSE&quot; + rmse_cv(model_ridge))</span>
-<span class="c1">#print(&quot;KNN RMSE&quot;+ rmse_cv(model_knn))</span>
+
+<span class="c1">#print(&quot;Lasso RMSE&quot; + rmse_cv(model_lasso.predict(x_test)))</span>
+<span class="c1">#print(&quot;Ridge RMSE&quot; + rmse_cv(model_ridge.predict(x_test)))</span>
+<span class="c1">#print(&quot;KNN RMSE&quot;+ rmse_cv(model_knn.predict(x_test)))</span>
 </pre></div>
 
     </div>
@@ -13858,14 +13860,14 @@ Score de Validação em KNN 0.08756686867662067
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Abaixo temos um plot do resultado final de treino e teste, com isso pode-se concluir que embora....</p>
+<p>Abaixo temos um plot do resultado final de treino e teste:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">xgboost</span> <span class="k">as</span> <span class="nn">xgb</span>
@@ -13881,57 +13883,10 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-18-311f3a7d22bc&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> 
-<span class="ansi-green-intense-fg ansi-bold">      5</span> params <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;max_depth&#34;</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">2</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;eta&#34;</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">0.1</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>model <span class="ansi-blue-fg">=</span> xgb<span class="ansi-blue-fg">.</span>cv<span class="ansi-blue-fg">(</span>params<span class="ansi-blue-fg">,</span> dtrain<span class="ansi-blue-fg">,</span>  num_boost_round<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">500</span><span class="ansi-blue-fg">,</span> early_stopping_rounds<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">100</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> model<span class="ansi-blue-fg">.</span>loc<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">30</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;test-rmse-mean&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;train-rmse-mean&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>plot<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/xgboost/training.py</span> in <span class="ansi-cyan-fg">cv</span><span class="ansi-blue-fg">(params, dtrain, num_boost_round, nfold, stratified, folds, metrics, obj, feval, maximize, early_stopping_rounds, fpreproc, as_pandas, verbose_eval, show_stdv, seed, callbacks, shuffle)</span>
-<span class="ansi-green-intense-fg ansi-bold">    443</span>                            evaluation_result_list=None))
-<span class="ansi-green-intense-fg ansi-bold">    444</span>         <span class="ansi-green-fg">for</span> fold <span class="ansi-green-fg">in</span> cvfolds<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 445</span><span class="ansi-red-fg">             </span>fold<span class="ansi-blue-fg">.</span>update<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> obj<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    446</span>         res <span class="ansi-blue-fg">=</span> aggcv<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>f<span class="ansi-blue-fg">.</span>eval<span class="ansi-blue-fg">(</span>i<span class="ansi-blue-fg">,</span> feval<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> f <span class="ansi-green-fg">in</span> cvfolds<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    447</span> 
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/xgboost/training.py</span> in <span class="ansi-cyan-fg">update</span><span class="ansi-blue-fg">(self, iteration, fobj)</span>
-<span class="ansi-green-intense-fg ansi-bold">    228</span>     <span class="ansi-green-fg">def</span> update<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> iteration<span class="ansi-blue-fg">,</span> fobj<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    229</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;&#34;Update the boosters for one iteration&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 230</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>bst<span class="ansi-blue-fg">.</span>update<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>dtrain<span class="ansi-blue-fg">,</span> iteration<span class="ansi-blue-fg">,</span> fobj<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    231</span> 
-<span class="ansi-green-intense-fg ansi-bold">    232</span>     <span class="ansi-green-fg">def</span> eval<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> iteration<span class="ansi-blue-fg">,</span> feval<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/xgboost/core.py</span> in <span class="ansi-cyan-fg">update</span><span class="ansi-blue-fg">(self, dtrain, iteration, fobj)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1107</span>         <span class="ansi-green-fg">if</span> fobj <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1108</span>             _check_call(_LIB.XGBoosterUpdateOneIter(self.handle, ctypes.c_int(iteration),
-<span class="ansi-green-fg">-&gt; 1109</span><span class="ansi-red-fg">                                                     dtrain.handle))
-</span><span class="ansi-green-intense-fg ansi-bold">   1110</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1111</span>             pred <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>predict<span class="ansi-blue-fg">(</span>dtrain<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
@@ -13945,193 +13900,13 @@ Score de Validação em KNN 0.08756686867662067
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="o">.</span><span class="n">ipynb</span>
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="o">--</span><span class="n">to</span> <span class="n">html</span> <span class="o">/</span><span class="n">content</span><span class="o">/</span><span class="n">drive</span><span class="o">/</span><span class="n">MyDrive</span><span class="o">/</span><span class="n">mestrado</span><span class="o">/</span><span class="mf">2022.2</span><span class="o">/</span><span class="n">aprendizagem_de_maquina_2022</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="n">olab</span><span class="o">/</span><span class="n">regularized</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[NbConvertApp] WARNING | pattern &#39;*.ipynb&#39; matched no files
-This application is used to convert notebook files (*.ipynb)
-        to various other formats.
-
-        WARNING: THE COMMANDLINE INTERFACE MAY CHANGE IN FUTURE RELEASES.
-
-Options
-=======
-The options below are convenience aliases to configurable class-options,
-as listed in the &#34;Equivalent to&#34; description-line of the aliases.
-To see all configurable class-options for some &lt;cmd&gt;, use:
-    &lt;cmd&gt; --help-all
-
---debug
-    set log level to logging.DEBUG (maximize logging output)
-    Equivalent to: [--Application.log_level=10]
---show-config
-    Show the application&#39;s configuration (human-readable format)
-    Equivalent to: [--Application.show_config=True]
---show-config-json
-    Show the application&#39;s configuration (json format)
-    Equivalent to: [--Application.show_config_json=True]
---generate-config
-    generate default config file
-    Equivalent to: [--JupyterApp.generate_config=True]
--y
-    Answer yes to any questions instead of prompting.
-    Equivalent to: [--JupyterApp.answer_yes=True]
---execute
-    Execute the notebook prior to export.
-    Equivalent to: [--ExecutePreprocessor.enabled=True]
---allow-errors
-    Continue notebook execution even if one of the cells throws an error and include the error message in the cell output (the default behaviour is to abort conversion). This flag is only relevant if &#39;--execute&#39; was specified, too.
-    Equivalent to: [--ExecutePreprocessor.allow_errors=True]
---stdin
-    read a single notebook file from stdin. Write the resulting notebook with default basename &#39;notebook.*&#39;
-    Equivalent to: [--NbConvertApp.from_stdin=True]
---stdout
-    Write notebook output to stdout instead of files.
-    Equivalent to: [--NbConvertApp.writer_class=StdoutWriter]
---inplace
-    Run nbconvert in place, overwriting the existing notebook (only 
-            relevant when converting to notebook format)
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory=]
---clear-output
-    Clear output of current file and save in place, 
-            overwriting the existing notebook.
-    Equivalent to: [--NbConvertApp.use_output_suffix=False --NbConvertApp.export_format=notebook --FilesWriter.build_directory= --ClearOutputPreprocessor.enabled=True]
---no-prompt
-    Exclude input and output prompts from converted document.
-    Equivalent to: [--TemplateExporter.exclude_input_prompt=True --TemplateExporter.exclude_output_prompt=True]
---no-input
-    Exclude input cells and output prompts from converted document. 
-            This mode is ideal for generating code-free reports.
-    Equivalent to: [--TemplateExporter.exclude_output_prompt=True --TemplateExporter.exclude_input=True]
---log-level=&lt;Enum&gt;
-    Set the log level by value or name.
-    Choices: any of [0, 10, 20, 30, 40, 50, &#39;DEBUG&#39;, &#39;INFO&#39;, &#39;WARN&#39;, &#39;ERROR&#39;, &#39;CRITICAL&#39;]
-    Default: 30
-    Equivalent to: [--Application.log_level]
---config=&lt;Unicode&gt;
-    Full path of a config file.
-    Default: &#39;&#39;
-    Equivalent to: [--JupyterApp.config_file]
---to=&lt;Unicode&gt;
-    The export format to be used, either one of the built-in formats
-            [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;]
-            or a dotted object name that represents the import path for an
-            `Exporter` class
-    Default: &#39;html&#39;
-    Equivalent to: [--NbConvertApp.export_format]
---template=&lt;Unicode&gt;
-    Name of the template file to use
-    Default: &#39;&#39;
-    Equivalent to: [--TemplateExporter.template_file]
---writer=&lt;DottedObjectName&gt;
-    Writer class used to write the 
-                                        results of the conversion
-    Default: &#39;FilesWriter&#39;
-    Equivalent to: [--NbConvertApp.writer_class]
---post=&lt;DottedOrNone&gt;
-    PostProcessor class used to write the
-                                        results of the conversion
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.postprocessor_class]
---output=&lt;Unicode&gt;
-    overwrite base name use for output files.
-                can only be used when converting one notebook at a time.
-    Default: &#39;&#39;
-    Equivalent to: [--NbConvertApp.output_base]
---output-dir=&lt;Unicode&gt;
-    Directory to write output(s) to. Defaults
-                                  to output to the directory of each notebook. To recover
-                                  previous default behaviour (outputting to the current 
-                                  working directory) use . as the flag value.
-    Default: &#39;&#39;
-    Equivalent to: [--FilesWriter.build_directory]
---reveal-prefix=&lt;Unicode&gt;
-    The URL prefix for reveal.js (version 3.x).
-            This defaults to the reveal CDN, but can be any url pointing to a copy 
-            of reveal.js. 
-            For speaker notes to work, this must be a relative path to a local 
-            copy of reveal.js: e.g., &#34;reveal.js&#34;.
-            If a relative path is given, it must be a subdirectory of the
-            current directory (from which the server is run).
-            See the usage documentation
-            (https://nbconvert.readthedocs.io/en/latest/usage.html#reveal-js-html-slideshow)
-            for more details.
-    Default: &#39;&#39;
-    Equivalent to: [--SlidesExporter.reveal_url_prefix]
---nbformat=&lt;Enum&gt;
-    The nbformat version to write.
-            Use this to downgrade notebooks.
-    Choices: any of [1, 2, 3, 4]
-    Default: 4
-    Equivalent to: [--NotebookExporter.nbformat_version]
-
-Examples
---------
-
-    The simplest way to use nbconvert is
-
-            &gt; jupyter nbconvert mynotebook.ipynb
-
-            which will convert mynotebook.ipynb to the default format (probably HTML).
-
-            You can specify the export format with `--to`.
-            Options include [&#39;asciidoc&#39;, &#39;custom&#39;, &#39;html&#39;, &#39;latex&#39;, &#39;markdown&#39;, &#39;notebook&#39;, &#39;pdf&#39;, &#39;python&#39;, &#39;rst&#39;, &#39;script&#39;, &#39;slides&#39;].
-
-            &gt; jupyter nbconvert --to latex mynotebook.ipynb
-
-            Both HTML and LaTeX support multiple output templates. LaTeX includes
-            &#39;base&#39;, &#39;article&#39; and &#39;report&#39;.  HTML includes &#39;basic&#39; and &#39;full&#39;. You
-            can specify the flavor of the format used.
-
-            &gt; jupyter nbconvert --to html --template basic mynotebook.ipynb
-
-            You can also pipe the output to stdout, rather than a file
-
-            &gt; jupyter nbconvert mynotebook.ipynb --stdout
-
-            PDF is generated via latex
-
-            &gt; jupyter nbconvert mynotebook.ipynb --to pdf
-
-            You can get (and serve) a Reveal.js-powered slideshow
-
-            &gt; jupyter nbconvert myslides.ipynb --to slides --post serve
-
-            Multiple notebooks can be given at the command line in a couple of 
-            different ways:
-
-            &gt; jupyter nbconvert notebook*.ipynb
-            &gt; jupyter nbconvert notebook1.ipynb notebook2.ipynb
-
-            or you can specify the notebooks list in a config file, containing::
-
-                c.NbConvertApp.notebooks = [&#34;my_notebook.ipynb&#34;]
-
-            &gt; jupyter nbconvert --config mycfg.py
-
-To see all available configurables, use `--help-all`.
-
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
